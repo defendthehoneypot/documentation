@@ -26,6 +26,11 @@ theme:
 
 You can customize this later. See: https://squidfunk.github.io/mkdocs-material/setup/  
 
+You can also view a working example of an `mkdocs.yml` file here:  
+- https://github.com/defendthehoneypot/documentation/blob/main/mkdocs.yml  
+Live site example:  
+- https://defendthehoneypot.github.io/documentation/  
+
 ---  
 
 ### `docs/index.md`  
