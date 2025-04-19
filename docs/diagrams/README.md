@@ -1,4 +1,4 @@
-[Flowcharts] are diagrams that represent workflows or processes. The steps
+Flowcharts are diagrams that represent workflows or processes. The steps
 are rendered as nodes of various kinds and are connected by edges, describing
 the necessary order of steps:
 
