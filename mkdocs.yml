@@ -125,10 +125,7 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Active Directory:
-    - Azure : windows/README.md
-    - Windows: windows/README.md
-    - PowerShell: windows/README.md
+  - Windows:
   - Coding:
     - JavaScript: coding/README.md
   - Diagrams:
