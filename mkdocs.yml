@@ -126,12 +126,14 @@ markdown_extensions:
 # Page tree
 nav:
   - Active Directory:
-    - Azure : windows/readme.md
-    - Windows: windows/readme.md
-    - PowerShell: windows/readme.md
+    - Azure : windows/README.md
+    - Windows: windows/README.md
+    - PowerShell: windows/README.md
   - Coding:
-    - JavaScript: coding/readme.md
+    - JavaScript: coding/README.md
+  - Diagrams:
+    - Flow Chart: diagrams/README.md
   - Troubleshooting:
-    - Printer Troubleshooting: troubleshooting/readme.md
+    - Printer Troubleshooting: troubleshooting/README.md
   - Printers:
-    - Printers: printers/readme.md
+    - Printers: printers/README.md
