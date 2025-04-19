@@ -1,191 +1,192 @@
-# Build an MkDocs Material Site Using GitHub Only (No Local Install)
+# Build an MkDocs Material Site Using GitHub Only (No Local Install)  
 
-This guide walks you through building and publishing a Material for MkDocs site entirely within GitHub, using GitHub Actions.
+This guide walks you through building and publishing a Material for MkDocs site entirely within GitHub, using GitHub Actions.  
 
----
+---  
 
-## Step 1: Create a New GitHub Repository
+## Step 1: Create a New GitHub Repository  
 
 1. Go to https://github.com/new  
 2. Name it something like `my-docs-site`  
-3. Click "Create repository"
+3. Click "Create repository"  
 
----
+---  
 
-## Step 2: Add `mkdocs.yml` and Docs Folder
+## Step 2: Add `mkdocs.yml` and Docs Folder  
 
-Create the following files using GitHub’s web interface:
+Create the following files using GitHub’s web interface:  
 
-### `mkdocs.yml`
+### `mkdocs.yml`  
 
-```yaml
-site_name: My Documentation Site
-theme:
-  name: material
-```
+```yaml  
+site_name: My Documentation Site  
+theme:  
+  name: material  
+```  
 
-You can customize this later. See: https://squidfunk.github.io/mkdocs-material/setup/
+You can customize this later. See: https://squidfunk.github.io/mkdocs-material/setup/  
 
----
+---  
 
-### `docs/index.md`
+### `docs/index.md`  
 
-Create a folder named `docs/` and add a file named `index.md`:
+Create a folder named `docs/` and add a file named `index.md`:  
 
-```markdown
-# Welcome to My Docs
+```markdown  
+# Welcome to My Docs  
 
-This site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).
-```
+This site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/).  
+```  
 
----
+---  
 
-## Step 3: Add GitHub Actions Workflow
+## Step 3: Add GitHub Actions Workflow  
 
-Create this file in your repository:
+Create this file in your repository:  
 
-`.github/workflows/gh-pages.yml`
+`.github/workflows/gh-pages.yml`  
 
-```yaml
-name: Deploy MkDocs site to GitHub Pages
+```yaml  
+name: Deploy MkDocs site to GitHub Pages  
 
-on:
-  push:
-    branches:
-      - main  # Or 'master', depending on your default branch
+on:  
+  push:  
+    branches:  
+      - main  # Or 'master', depending on your default branch  
 
-permissions:
-  contents: write  # Required to allow pushing to gh-pages
+permissions:  
+  contents: write  # Required to allow pushing to gh-pages  
 
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
+jobs:  
+  deploy:  
+    runs-on: ubuntu-latest  
 
-    steps:
-      - uses: actions/checkout@v4
+    steps:  
+      - uses: actions/checkout@v4  
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.x'
+      - name: Set up Python  
+        uses: actions/setup-python@v5  
+        with:  
+          python-version: '3.x'  
 
-      - name: Install dependencies
-        run: pip install mkdocs-material
+      - name: Install dependencies  
+        run: pip install mkdocs-material  
 
-      - name: Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
-```
+      - name: Deploy to GitHub Pages  
+        run: mkdocs gh-deploy --force  
+```  
 
----
+---  
 
-## Step 4: Allow GitHub Actions to Push to the Repository
+## Step 4: Allow GitHub Actions to Push to the Repository  
 
 1. Go to your repo → Settings → Actions → General  
 2. Scroll to "Workflow permissions"  
 3. Select:  
    [x] Read and write permissions  
-4. Click "Save"
+4. Click "Save"  
 
-> This gives the Action permission to push to the `gh-pages` branch.
+> This gives the Action permission to push to the `gh-pages` branch.  
 
----
+---  
 
-## Step 5: Configure GitHub Pages
+## Step 5: Configure GitHub Pages  
 
 1. Go to Settings → Pages  
-2. Under Source, select:
-   - Branch: `gh-pages`
-   - Folder: `/ (root)`
-3. Click "Save"
+2. Under Source, select:  
+   - Branch: `gh-pages`  
+   - Folder: `/ (root)`  
+3. Click "Save"  
 
----
+---  
 
-## Step 6: Understanding the `nav` Section (Optional)
+## Step 6: Understanding the `nav` Section (Optional)  
 
-The `nav` section in `mkdocs.yml` lets you define a custom navigation structure for your site.
+The `nav` section in `mkdocs.yml` lets you define a custom navigation structure for your site.  
 
-### Without `nav` (automatic)
+### Without `nav` (automatic)  
 
-If you do **not** specify `nav`, MkDocs will automatically create navigation by scanning your `docs/` folder alphabetically.
+If you do **not** specify `nav`, MkDocs will automatically create navigation by scanning your `docs/` folder alphabetically.  
 
-Example:
+Example:  
 
-```yaml
-site_name: My Docs
-theme:
-  name: material
+```yaml  
+site_name: My Docs  
+theme:  
+  name: material  
+```  
+
+If your `docs/` folder has:  
 ```
+docs/  
+  index.md  
+  about.md  
+  faq.md  
+```  
 
-If your `docs/` folder has:
-```
-docs/
-  index.md
-  about.md
-  faq.md
-```
+MkDocs will display:  
+- Home  
+- About  
+- Faq  
 
-MkDocs will display:
-- Home
-- About
-- Faq
+Sorted alphabetically (or by file system order).  
 
-Sorted alphabetically (or by file system order).
+---  
 
----
+### With `nav` (manual control)  
 
-### With `nav` (manual control)
+To control order and display names, use `nav`:  
 
-To control order and display names, use `nav`:
+```yaml  
+site_name: My Docs  
+theme:  
+  name: material  
 
-```yaml
-site_name: My Docs
-theme:
-  name: material
+nav:  
+  - Home: index.md  
+  - About This Site: about.md  
+  - FAQ: faq.md  
+```  
 
-nav:
-  - Home: index.md
-  - About This Site: about.md
-  - FAQ: faq.md
-```
+This lets you:  
+- Change link titles  
+- Set custom order  
+- Nest pages into groups  
 
-This lets you:
-- Change link titles
-- Set custom order
-- Nest pages into groups
+### When to use `nav`  
 
-### When to use `nav`
+Use `nav` if:  
+- You want to control page order  
+- You want custom link names  
+- You want grouped or nested sections  
 
-Use `nav` if:
-- You want to control page order
-- You want custom link names
-- You want grouped or nested sections
+Leave it out if:  
+- Your site is very small  
+- You’re okay with alphabetical order  
 
-Leave it out if:
-- Your site is very small
-- You’re okay with alphabetical order
+---  
 
----
+## Step 7: Your Site Is Live  
 
-## Step 7: Your Site Is Live
-
-After you push to `main`, GitHub Actions will build and deploy your site.
+After you push to `main`, GitHub Actions will build and deploy your site.  
 
 Visit:  
 ```
-https://your-username.github.io/your-repo/
-```
+https://your-username.github.io/your-repo/  
+```  
 
-(Replace with your GitHub username and repo name)
+(Replace with your GitHub username and repo name)  
 
----
+---  
 
-## Step 8: Updating Content
+## Step 8: Updating Content  
 
-Any time you update `docs/` or `mkdocs.yml`, GitHub Actions will automatically redeploy your site.
+Any time you update `docs/` or `mkdocs.yml`, GitHub Actions will automatically redeploy your site.  
 
----
+---  
 
-## Resources
+## Resources  
 
-- MkDocs: https://www.mkdocs.org/
-- MkDocs Material: https://squidfunk.github.io/mkdocs-material/
+- MkDocs: https://www.mkdocs.org/  
+- MkDocs Material: https://squidfunk.github.io/mkdocs-material/  
+
