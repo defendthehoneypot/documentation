@@ -125,7 +125,8 @@ markdown_extensions:
 
 # Page tree
 nav:
-  - Windows:
+  - Windows: 
+    - Overview: windows/README.md
     - PowerShell: 
       - PowerCLI: windows/powershell/powercli.md
   - Coding:
