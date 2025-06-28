@@ -7,7 +7,7 @@ This guide walks you through building and publishing a Material for MkDocs site 
 ## Step 1: Create a New GitHub Repository  
 
 1. Go to https://github.com/new  
-2. Name it something like `my-docs-site`  
+2. Name it something like `Documentation`  
 3. Click "Create repository"  
 
 ---  
