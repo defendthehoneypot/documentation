@@ -28,6 +28,12 @@ You can customize this later. See: https://squidfunk.github.io/mkdocs-material/s
 
 You can also view a working example of an `mkdocs.yml` file here:  
 - https://github.com/defendthehoneypot/documentation/blob/main/mkdocs.yml  
+- Ensure you change the following lines to match your site before commiting  
+```
+site_url: https://defendthehoneypot.github.io/documentation
+repo_url: https://github.com/defendthehoneypot/documentation
+```  
+
 Live site example:  
 - https://defendthehoneypot.github.io/documentation/  
 
