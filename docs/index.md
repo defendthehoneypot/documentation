@@ -14,7 +14,7 @@ This guide walks you through building and publishing a Material for MkDocs site 
 
 ## Step 2: Create Branch for GitHub Pages  
 The branch is required to write the html data for displaying the mkdocs site.
-  
+
 `gh-pages`  
 
 ---  
@@ -44,7 +44,6 @@ repo_url: https://github.com/defendthehoneypot/documentation
 Live site example:  
 - https://defendthehoneypot.github.io/documentation/  
 
----  
 
 ### `docs/index.md`  
 
