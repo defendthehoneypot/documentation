@@ -54,6 +54,8 @@ This site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs
 ## Step 3: Create Branch for GitHub Pages  
 `gh-pages`  
 
+---  
+
 ## Step 4: Add GitHub Actions Workflow  
 
 Create this file in your repository:  
