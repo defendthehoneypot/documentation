@@ -51,7 +51,10 @@ This site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs
 
 ---  
 
-## Step 3: Add GitHub Actions Workflow  
+## Step 3: Create Branch for GitHub Pages  
+`gh-pages`  
+
+## Step 4: Add GitHub Actions Workflow  
 
 Create this file in your repository:  
 
@@ -89,7 +92,7 @@ jobs:
 
 ---  
 
-## Step 4: Allow GitHub Actions to Push to the Repository  
+## Step 5: Allow GitHub Actions to Push to the Repository  
 
 1. Go to your repo → Settings → Actions → General  
 2. Scroll to "Workflow permissions"  
@@ -101,7 +104,7 @@ jobs:
 
 ---  
 
-## Step 5: Configure GitHub Pages  
+## Step 6: Configure GitHub Pages  
 
 1. Go to Settings → Pages  
 2. Under Source, select:  
@@ -111,7 +114,7 @@ jobs:
 
 ---  
 
-## Step 6: Understanding the `nav` Section (Optional)  
+## Step 7: Understanding the `nav` Section (Optional)  
 
 The `nav` section in `mkdocs.yml` lets you define a custom navigation structure for your site.  
 
@@ -177,7 +180,7 @@ Leave it out if:
 
 ---  
 
-## Step 7: Your Site Is Live  
+## Step 8: Your Site Is Live  
 
 After you push to `main`, GitHub Actions will build and deploy your site.  
 
