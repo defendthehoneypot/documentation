@@ -57,7 +57,6 @@ This site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs
 
 ---  
 
-
 ## Step 4: Add GitHub Actions Workflow  
 
 Create this file in your repository:  
@@ -148,8 +147,6 @@ MkDocs will display:
 - Faq  
 
 Sorted alphabetically (or by file system order).  
-
----  
 
 ### With `nav` (manual control)  
 
