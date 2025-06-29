@@ -12,7 +12,14 @@ This guide walks you through building and publishing a Material for MkDocs site 
 
 ---  
 
-## Step 2: Add `mkdocs.yml` and Docs Folder  
+## Step 2: Create Branch for GitHub Pages  
+The branch is required to write the html data for displaying the mkdocs site.
+  
+`gh-pages`  
+
+---  
+
+## Step 3: Add `mkdocs.yml` and Docs Folder  
 
 Create the following files using GitHub’s web interface:  
 
@@ -51,10 +58,6 @@ This site is built with [Material for MkDocs](https://squidfunk.github.io/mkdocs
 
 ---  
 
-## Step 3: Create Branch for GitHub Pages  
-`gh-pages`  
-
----  
 
 ## Step 4: Add GitHub Actions Workflow  
 
