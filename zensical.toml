@@ -1,0 +1,39 @@
+[project]
+site_name = "Documentation"
+site_url = "https://defendthehoneypot.github.io/documentation"
+docs_dir = "docs"
+
+nav = [
+  {"Windows" = [
+    {"Overview" = "windows/README.md"},
+    {"PowerShell" = [
+      {"PowerCLI" = "windows/powershell/powercli.md"}
+    ]}
+  ]},
+  {"Coding" = [
+    {"JavaScript" = "coding/README.md"}
+  ]},
+  {"Diagrams" = [
+    {"Flow Chart" = "diagrams/README.md"}
+  ]},
+  {"Troubleshooting" = [
+    {"Printer Troubleshooting" = "troubleshooting/README.md"}
+  ]},
+  {"Printers" = [
+    {"Printers" = "printers/README.md"}
+  ]}
+]
+
+[project.theme]
+variant = "classic"
+features = [
+  "navigation.tabs",
+  "navigation.sections",
+  "navigation.top",
+  "navigation.footer",
+  "navigation.tracking",
+  "search.highlight",
+  "search.share",
+  "search.suggest",
+  "toc.follow"
+]
