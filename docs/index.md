@@ -167,16 +167,38 @@ Sorted alphabetically (or by file system order).
 
 ### With `nav` (manual control)
 
-To control order and display names, use `nav`:
+To control order and display names, use `nav` with TOML's array of tables format:
 
 ```toml
 site_name = "My Docs"
 theme = "material"
 
-[nav]
-"Home" = "index.md"
-"About This Site" = "about.md"
-"FAQ" = "faq.md"
+[[nav]]
+title = "Home"
+url = "index.md"
+
+[[nav]]
+title = "About This Site"
+url = "about.md"
+
+[[nav]]
+title = "FAQ"
+url = "faq.md"
+```
+
+For nested sections:
+
+```toml
+[[nav]]
+title = "Documentation"
+children = [
+  { title = "Getting Started", url = "guides/getting-started.md" },
+  { title = "Installation", url = "guides/installation.md" }
+]
+
+[[nav]]
+title = "API Reference"
+url = "api.md"
 ```
 
 This lets you:
