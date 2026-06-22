@@ -1,3 +1,3 @@
 # documentation
-mkkocs example site  
+zensical example site  
   
